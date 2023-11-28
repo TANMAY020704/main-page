@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; 
+        }
+
+        video#background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0; 
+            transition: opacity 1s; 
+        }
+    </style>
+</head>
+<body>
+    <video id="background-video" autoplay muted>
+        <source src="F081.mp4" type="video/mp4">
+    </video>
+    
+    <script>
+        document.getElementById("background-video").addEventListener("canplaythrough", function() {
+            this.style.opacity = 1;
+
+            setTimeout(function() {
+                window.location.href = "mainpage.html";
+            }, 10000); 
+        });
+    </script>
+</body>
+</html>
